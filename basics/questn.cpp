@@ -59,7 +59,11 @@ void sum_n() {
 
 void pythagorean() {
     // check for pythagorean triplet
-    
+    // i.e. a^2 + b^2 = c^2;
+    int a=2, b=4, c=5;
+    if((a*a)+(b*b) == (c*c)) {
+        cout << "Yes it is";
+    } else {cout << "Not a pytha triplet";}
 }
 
 int main() {
@@ -67,7 +71,7 @@ int main() {
     // factor();
     // fibonacci();
     // sum_n();
-    pythagorean();
+    // pythagorean();
 
     return 0;
 }
