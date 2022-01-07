@@ -69,10 +69,88 @@ void recordBreak() {
     cout << numofRB;
 }
 
-void firstRepEle(int n, int arr[]) {
+void firstRepEle(int n, int a[]) {
     // first repeating element
     // i.e. an element that occurs more than once and whose index of first occurence is smallest 
+    const int N = 1e6+2;
+    int idx[N];
+    for(int i=0; i<N; i++) {
+        idx[i] = -1;
+    }
+
+    int minidx = INT_MAX;
+    for(int i=0; i<n; i++) {
+        if(idx[a[i]] != -1) {
+            minidx = min(minidx, idx[a[i]]);
+        } else {
+            idx[a[i]] = i;
+        }
+    }
+
+    // what if meko minidx mila hi nai (int_max hi raha)
+    if(minidx == INT_MAX) {
+        cout << "-1" << endl;
+    } else {
+        cout << minidx + 1 << endl;
+    }
+}
+
+void subarrWthGivenSum(int n, int a[]) {
+    // given an undorted array, non-negative integers
+    // find a continous subarray which adds to given number S;
+    int S; cin>>S;
+    int st=-1, en=-1;
+    int currSum=0; // sum betn s & e
     
+    int i=0, j=0;
+    while(j<n && currSum+a[j] <= S) {
+        currSum += a[j];
+        j++;
+    }
+
+    if(currSum == S) {
+        // cout << i+1 << " "<<j;
+        st = i+1;
+        en = j;
+    }
+
+    while(j<n) {
+        currSum += a[j];
+        while(currSum > S) {
+            currSum -= a[i];
+            i++;
+        }
+        if(currSum == S) {
+            st = i+1; en = j+1;
+            break;
+        }
+        j++;
+    }
+    cout << st << " " << en;
+}
+
+void missingNum(int n, int a[]) {
+    // smallest positive missing number
+    int N= 1e6+2;
+    bool A[N];
+    for(int i=0; i<N; i++) {
+        A[i] = false;
+    }
+
+    for(int i=0; i<n; i++) {
+        if(a[i] >= 0) {
+            A[a[i]] = true;
+        }
+    }
+
+    int ans = -1;
+    for(int i=0; i<N; i++) {
+        if(A[i] == false) {
+            ans = i;
+            break;
+        }
+    }
+    cout << ans;
 }
 
 int main() {
@@ -86,7 +164,9 @@ int main() {
     // sumSubarray(n,arr);
     // lcas(n,arr);
     // recordBreak();
-    firstRepEle(n,arr);
+    // firstRepEle(n,arr);
+    // subarrWthGivenSum(n,arr);
+    missingNum(n,arr);
 
     return 0;
 }
