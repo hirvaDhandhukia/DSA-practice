@@ -45,12 +45,41 @@ void rightHalfPyramid() {
     }
 }
 
+void halfPyramidNum() {
+    int n; cin>>n;
+    for(int i=1; i<=n; i++) {
+        for(int j=1; j<=i; j++) {
+            cout << i;
+        }
+        cout << endl;
+    }
+}
+
+void floydsTriangle() {
+    int n; cin>>n;
+    int k=1;
+    for(int i=1; i<=n; i++) {
+        for(int j=1; j<=i; j++) {
+            cout << k << " ";
+            k++;
+        }
+        cout << endl;
+    }
+}
+
+void butterfly() {
+    
+}
+
 int main() {   
 
     // rectangle();
     // hollowrect();
     // invertedHalfPyramid();
-    rightHalfPyramid();
+    // rightHalfPyramid();
+    // halfPyramidNum();
+    // floydsTriangle();
+    butterfly();
 
     return 0;
 }
