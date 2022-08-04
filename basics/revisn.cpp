@@ -24,10 +24,6 @@ void isArmstrong(int n) {
     cout << sum;
 }
 
-// void binaryToDec() {
-
-// }
-
 void decToBinary() {
 
     int n; cin>>n;
@@ -57,6 +53,113 @@ void binaryToDec() {
 
     cout << ans;
 }
+
+void octalToDec() {
+
+    int n; cin>>n;
+    int ans=0, m=1;
+    while(n>0) {
+        int lastdigit = n%10;
+        ans = ans + lastdigit*m;
+
+        n = n/10;
+        m = m*8;
+    }
+
+    cout << ans;
+}
+
+int reverse(int ans) {
+    int count = 0;
+    while(ans > 0) {
+        int lastDigit = ans%10;
+        count = count*10 + lastDigit;
+
+        ans = ans/10;
+    }
+    return count;
+}
+
+void addTwoBinary() {
+    int a,b; cin>>a>>b;
+    int prevCarry =0, ans=0;
+
+    while(a,b) {
+        // both 0
+        if(a%2 == 0 && b%2 == 0) {
+            // if(prevCarry == 0) {
+            //     ans = ans*10 + prevCarry;
+            //     prevCarry = 0;
+            // }
+            // // prevCarry = 1 
+            // else {
+            //     ans = ans*10 + prevCarry;
+            //     prevCarry = 0;
+            // }
+
+            ans = ans*10 + prevCarry;
+            prevCarry = 0;
+        }
+        // one is 1 & other 0 
+        else if((a%2==0 && b%2==1) || (a%2==1 && b%2==0)) {
+            if(prevCarry == 1) {
+                ans = ans*10 + 0;
+                prevCarry = 1;
+            } else {
+                ans = ans*10 + 1;
+                prevCarry = 0;
+            }
+        }
+        // both 1
+        else if (a%2 == 1 && b%2 == 1) {
+            ans = ans*10 + prevCarry;
+            prevCarry = 1;
+        }
+
+
+        a /= 10;
+        b /= 10;
+    }
+
+    // length a>b 
+    while(a>0) {
+        if(prevCarry == 1) {
+            if(a%2 == 1) {
+                ans = ans*10 + 0;
+                prevCarry = 1;
+            } else {
+                ans = ans*10 + 1;
+                prevCarry=0;
+            }
+        } else {
+            ans = ans*10 + (a%2);
+        }
+        a /= 10;
+    }
+
+    while (b>0) {
+        if(prevCarry == 1) {
+            if(b%2 == 1) {
+                ans = ans*10 + 0;
+                prevCarry = 1;
+            } else {
+                ans = ans*10 + 1;
+                prevCarry=0;
+            }
+        } else {
+            ans = ans*10 + (b%2);
+        }
+        b /= 10;
+    }
+
+    if(prevCarry=1) {
+        ans = ans*10 + 1;
+    }
+
+    cout << reverse(ans);
+ 
+}
+
 
 int main() {
     // sum 2 nums 
@@ -106,7 +209,10 @@ int main() {
     
 
     // decToBinary();
-    binaryToDec();
+    // binaryToDec();
+    // octalToDec();
+
+    addTwoBinary();
 
     return 0;
 }
