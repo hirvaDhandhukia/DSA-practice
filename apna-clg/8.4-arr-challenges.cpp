@@ -68,6 +68,82 @@ void recordBreakingDay(int a[], int n) {
 
 }
 
+void firstRepeatingEle(int a[], int n) {
+
+    const int N = 1e6+2;
+    int idx[N];
+    for(int i=0; i<N; i++) {
+        idx[i] = -1;
+    }
+
+    int minidx = INT_MAX;
+
+    for(int i=0; i<n; i++) {
+        if(idx[a[i]] != -1) {
+            minidx = min(minidx, idx[a[i]]);
+        } else {
+            idx[a[i]] = i;
+        }
+    }
+    
+    if(minidx == INT_MAX) {
+        cout << "-1" << endl;
+    } else {
+        cout << minidx + 1 << endl;
+    }
+
+}
+
+// O(n^2)
+void bruteSubarrayWthGivenSum(int a[], int n) {
+
+    int s; cin >> s;
+    int curr = 0;
+    for(int i=0; i<n; i++) {
+        curr = 0;
+        for(int j=i; j<n; j++) {
+            curr += a[j];
+            // cout << curr << " ";
+            if(curr == s) {
+                cout << i+1 << " " << j+1;
+                return;
+            }
+        }
+    }
+}
+
+void subarrayWthGivenSum(int a[], int n) {
+    int s; cin >> s;
+
+    int i=0, j=0, st=-1, en=-1, sum=0;
+    while(j<n && sum+a[j] <= s) {
+        sum += a[j];
+        j++;
+    }
+
+    if(sum == s) {
+        cout << i+1 << " " << j << endl;
+        return;
+    }
+
+    while(j<n) {
+        sum += a[j];
+        while(sum > s) {
+            sum -= a[i];
+            i++;
+        }
+        if(sum == s) {
+            st = i+1;
+            en = j+1;
+            break;
+        }
+        j++;
+    }
+
+    cout << st << " " << en << endl;
+
+}
+
 int main() {
 
     int n; cin>>n;
@@ -79,7 +155,10 @@ int main() {
     // maxTilli(arr, n);
     // sumOfEachSubarray(arr, n);
     // longestArithmeticSubarray(arr, n);
-    recordBreakingDay(arr, n);
+    // recordBreakingDay(arr, n);
+    // firstRepeatingEle(arr, n);
+    // bruteSubarrayWthGivenSum(arr, n);
+    subarrayWthGivenSum(arr, n);
 
     return 0;
 }
