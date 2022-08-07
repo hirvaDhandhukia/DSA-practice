@@ -1,0 +1,1 @@
+{"name":"Local: 8","url":"/home/hirva/Documents/GitHub/DSA-practice/apna-clg/8.3-sorting.cpp","tests":[{"id":1659677511409,"input":"6\n12 45 23 51 19 8","output":"8 12 19 23 45 51"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hirva/Documents/GitHub/DSA-practice/apna-clg/8.3-sorting.cpp","group":"local","local":true}
