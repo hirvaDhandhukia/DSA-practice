@@ -1,0 +1,1 @@
+{"name":"Local: Main","url":"/home/hirva/code/java/Main.java","tests":[{"id":1695121246111,"input":"","output":"Hello World\nHirva\n16"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hirva/code/java/Main.java","group":"local","local":true}

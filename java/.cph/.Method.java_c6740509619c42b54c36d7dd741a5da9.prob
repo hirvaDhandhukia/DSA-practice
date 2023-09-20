@@ -1,0 +1,1 @@
+{"name":"Local: Method","url":"/home/hirva/code/java/Method.java","tests":[{"id":1695245026073,"input":"","output":"method called!"},{"id":1695245128174,"input":"","output":"HirvaCodes"},{"id":1695245266671,"input":"","output":"HirvaCodes\n6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hirva/code/java/Method.java","group":"local","local":true}

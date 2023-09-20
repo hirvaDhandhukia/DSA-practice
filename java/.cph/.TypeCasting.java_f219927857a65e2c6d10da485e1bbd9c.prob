@@ -1,0 +1,1 @@
+{"name":"Local: TypeCasting","url":"/home/hirva/code/java/TypeCasting.java","tests":[{"id":1695235929754,"input":"","output":"9\n9.0"},{"id":1695236072327,"input":"","output":"9\n9.0\n9\n9.78"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hirva/code/java/TypeCasting.java","group":"local","local":true}
