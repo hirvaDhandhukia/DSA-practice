@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Array {
     public static void main(String[] args) {
         String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
@@ -16,5 +18,19 @@ public class Array {
               System.out.println(myNumbers[i][j]);
            }
         }
+
+        // basics of arrays
+        int[] marks = new int[3];
+        marks[0] = 92;
+        marks[1] = 98;
+        marks[2] = 95;
+        
+        // length
+        System.out.println(marks.length);
+
+        // sort
+        System.out.println(marks[2]);
+        Arrays.sort(marks);
+        System.out.println(marks[2]);
     }
 }
