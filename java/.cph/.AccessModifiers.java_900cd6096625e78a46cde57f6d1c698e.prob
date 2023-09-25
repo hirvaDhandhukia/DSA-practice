@@ -1,0 +1,1 @@
+{"name":"Local: AccessModifiers","url":"/home/hirva/Documents/GitHub/DSA-practice/java/AccessModifiers.java","tests":[{"id":1695621973252,"input":"","output":"m2\nm1\nm2 child"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hirva/Documents/GitHub/DSA-practice/java/AccessModifiers.java","group":"local","local":true}
