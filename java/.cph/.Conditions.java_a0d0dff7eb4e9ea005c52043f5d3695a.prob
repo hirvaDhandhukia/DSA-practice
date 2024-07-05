@@ -1,0 +1,1 @@
+{"name":"Local: Conditions","url":"/home/hirva/Documents/GitHub/DSA-practice/java/Conditions.java","tests":[{"id":1719523542303,"input":"21","output":"Adult"},{"id":1719523555698,"input":"14","output":"Not Adult"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hirva/Documents/GitHub/DSA-practice/java/Conditions.java","group":"local","local":true}
