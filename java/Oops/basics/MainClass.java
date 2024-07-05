@@ -1,6 +1,10 @@
 package Oops.basics;
+// import Oops.encapsulation.EncapIntro;
 
 public class MainClass {
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         // new object of the class `Person`
         // Person p1 = new Person();
@@ -23,6 +27,10 @@ public class MainClass {
 
         Developer d1 = new Developer("Ell", 31);
         d1.walk();
+
+
+        // EncapIntro obj = new EncapIntro();
+        // obj.doWork();
     }
 }
 
