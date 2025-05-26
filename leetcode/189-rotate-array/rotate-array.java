@@ -13,8 +13,8 @@ class Solution {
 
 
         // reverse entire array, then 1st half followed by 2nd half 
-        k = k % nums.length-1;
         int n = nums.length;
+        k = k % n-1;
 
         reverse(nums, 0, n-1);
         reverse(nums, 0, k);
